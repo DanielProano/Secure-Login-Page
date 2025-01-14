@@ -33,7 +33,6 @@ public class ClientHandler implements Runnable {
             // now user is logged in with a valid account
             while (true) {
                 String input = reader.readLine();
-                System.out.println(input);
                 if (input.equals("Changing Profile")) {
                     changeProfile(reader, writer);
                 } else if (input.equals("Logging Out")) {
@@ -89,7 +88,6 @@ public class ClientHandler implements Runnable {
             if (decision.equals("Account, no Password")) {
                 String old = read.readLine();
                 String newInfo = read.readLine();
-                System.out.println(old + "!" + newInfo);
                 if (data.updateAccount(old, newInfo)) {
                     write.println("Change good");
                     write.flush();
@@ -140,7 +138,6 @@ public class ClientHandler implements Runnable {
                         write.flush();
                     } else {
                         write.println("Password change failed");
-                        System.out.println("Problem");
                         write.flush();
                     }
                 } else {

@@ -111,7 +111,6 @@ public class Client {
 
                         if (read.readLine().equals("Login good")) {
                             String userInfo = data.returnUserInfo(usernameSend);
-                            System.out.println(userInfo);
                             user = new User(userInfo);
 
                             write.println(true);
@@ -142,7 +141,6 @@ public class Client {
                 protected void done() {
                     try {
                         frame.getContentPane().removeAll();
-                        System.out.println("2");
 
                         JPanel panel = new JPanel();
                         panel.setLayout(null);

@@ -29,14 +29,11 @@ public class Database {
     }
 
     public synchronized boolean updateAccount(String oldInfo, String newInfo) {
-        System.out.println(oldInfo + "!" + newInfo);
 
         File temp = new File("Temp.txt");
         File storage = new File("Storage.txt");
         String[] oldInfoArray = oldInfo.split(",");
-        System.out.println(oldInfo);
         String[] newInfoArray = newInfo.split(",");
-        System.out.println(newInfo);
         ArrayList<String> copyStorageContents = new ArrayList<>();
         try (BufferedReader read = new BufferedReader(new FileReader(storage));
              PrintWriter p = new PrintWriter(new FileWriter(temp))) {
